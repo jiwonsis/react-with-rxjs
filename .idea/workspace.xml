@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cbc9e5f9-ef23-4621-881b-53b3b6cdfcc8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/sangbongmoon.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/sangbongmoon.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Step1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Step1.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -47,7 +44,7 @@
           <entry key="css" value="329" />
           <entry key="html" value="82" />
           <entry key="js" value="4346" />
-          <entry key="md" value="2868" />
+          <entry key="md" value="3060" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -55,7 +52,7 @@
           <entry key="CSS" value="329" />
           <entry key="HTML" value="82" />
           <entry key="JavaScript" value="4346" />
-          <entry key="Markdown" value="2868" />
+          <entry key="Markdown" value="3060" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -79,8 +76,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="326">
-                <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+              <first_editor relative-caret-position="224">
+                <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
               </first_editor>
               <second_editor />
             </state>
@@ -126,7 +123,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1120" />
     <option name="height" value="947" />
@@ -198,12 +195,12 @@
       <option name="presentableId" value="Default" />
       <updated>1533134815292</updated>
       <workItem from="1533134817501" duration="90000" />
-      <workItem from="1533134922052" duration="12162000" />
+      <workItem from="1533134922052" duration="12500000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12252000" />
+    <option name="totallyTimeSpent" value="12590000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -215,10 +212,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1120" height="947" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="947" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22656961" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15009041" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -232,7 +229,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32896304" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32896304" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -299,8 +296,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="326">
-            <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <first_editor relative-caret-position="224">
+            <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
           </first_editor>
           <second_editor />
         </state>
