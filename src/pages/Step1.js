@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import {fromEvent} from 'rxjs';
+import {fromEvent, Subject} from 'rxjs';
 import {
 	map,
 	switchMap,
@@ -31,7 +31,6 @@ class AutoCompletedUI extends Component {
 	}
 	
 	componentDidMount() {
-		this.$loading = document.getElementById('loading');
 		const keyUp$ = fromEvent(document.getElementById('search'), 'keyup')
 			.pipe(
 				debounceTime(300),  // 300ms 뒤에 데이터 전달
@@ -40,15 +39,13 @@ class AutoCompletedUI extends Component {
 				tap(v => console.log('from keyup$', v)),
 			);
 		
-		let [user$, reset$] = keyUp$
+		const subject = new Subject();
+		let [user$, reset$] = subject
 			.pipe(
-				partition(query => {
-					console.log('part ', query.trim().length > 0);
-					return query.trim().length > 0;
-				})  // 파티션 함수의 참이 되는 Observable 은 user$, 거짓인경우, reset$ 으로 두개의 Observable 로 분리
+				partition(query => query.trim().length > 0)  // 파티션 함수의 참이 되는 Observable 은 user$, 거짓인경우, reset$ 으로 두개의 Observable 로 분리
 			);
 		
-		user$ = user$
+		user$
 			.pipe(
 				tap(() => this.showLoading()),  // rxjs5 에서는 do라는 함수를 써서 해당 이벤트를 발생시켰으나, 현재는 tap 으로 처리
 				switchMap(query => ajax.getJSON(`https://api.github.com/search/users?q=${query}`)), // 기존 처리가 완료 안된 상태에서 새로운 처리가 들어온 경우 기존 데이터는 unsubscribe 처리하고 새로운 데이터를 처리함
@@ -56,26 +53,29 @@ class AutoCompletedUI extends Component {
 				retry(2), // throw error 가 발생했을 경우, 2번까지는 제시도 가능
 				finalize(() => this.hideLoading()),     // try-catch 의 finally 와 동일한 이벤트 발생
 				tap(v => console.log('from user$', v)),
-			);
+			)
+			.subscribe({
+				next: (data) => {       // 구독된 데이터가 정상일 경우의 처리
+					this.setState({
+						...this.state,
+						items: data.items
+					});
+				},
+				error: (error) => {     // 구독된 데이터에서 에러가 발생했을 경우, 해당 이벤트 발생
+					console.error(error);
+					alert(error.message);
+				},
+			});
 		
 		reset$
 			.pipe(
 				tap(() => this.resetState()),
 				tap(v => console.log('from reset$', v)),
-			).subscribe();
+			)
+			.subscribe();
 		
-		user$.subscribe({
-			next: (data) => {       // 구독된 데이터가 정상일 경우의 처리
-				this.setState({
-					...this.state,
-					items: data.items
-				});
-			},
-			error: (error) => {     // 구독된 데이터에서 에러가 발생했을 경우, 해당 이벤트 발생
-				console.error(error);
-				alert(error.message);
-			},
-		});
+		// subject 에서 user$ 와 reset$ 을 생성한 후, subject 가 keyup$ 를 구독
+		keyUp$.subscribe(subject);
 	}
 	
 	resetState() {
