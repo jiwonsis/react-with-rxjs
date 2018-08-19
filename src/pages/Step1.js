@@ -13,14 +13,14 @@ import {
 	publish,
 } from 'rxjs/operators'
 import {ajax} from 'rxjs/ajax'
-import './Step1.css';
+import './Step1.css'
 
 const searchList = (user = {avatar_url: '', html_url: '', login: ''}) => (
 	<li className="user" key={user.id}>
 		<img src={user.avatar_url} width="50px" height="50px" alt="프로필"/>
 		<p><a href={user.html_url} target="_blank">{user.login}</a></p>
 	</li>
-);
+)
 
 class AutoCompletedUI extends Component {
 	

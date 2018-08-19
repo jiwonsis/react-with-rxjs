@@ -4,6 +4,7 @@
       <w>connectable</w>
       <w>keyup</w>
       <w>multicast</w>
+      <w>ontouchstart</w>
     </words>
   </dictionary>
 </component>
